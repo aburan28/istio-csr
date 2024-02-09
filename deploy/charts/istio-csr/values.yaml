@@ -125,6 +125,8 @@ app:
     istiodCertificateEnable: true
     # Number of bits to use for istiod-tls RSAKey
     istiodPrivateKeySize: 2048
+    # override istiod certificate common name
+    # istiodCommonName: ""
 
   server:
     # The istio cluster ID to verify incoming CSRs.

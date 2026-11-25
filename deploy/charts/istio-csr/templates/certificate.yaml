@@ -11,7 +11,11 @@ metadata:
     {{- end }}
 {{- end }}
 spec:
+  {{- if .Values.app.tls.istiodCommonName }}
+  commonName: {{ .Values.app.tls.istiodCommonName }}
+  {{- else }}
   commonName: istiod.{{ .Values.app.istio.namespace }}.svc
+  {{- end }}
   dnsNames:
   {{- $revisions := dict -}}
   {{- if .Values.app.istio.revisions }}
